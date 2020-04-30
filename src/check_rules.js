@@ -65,7 +65,12 @@ function CreateRulesEngine() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({"reference":"BVV_v9","issuer":"SZW","rules":"JSON formatted new set of rules"});
+    var raw = JSON.stringify({
+        "domain": "BVV",
+        "reference": "BVV_v3",
+        "issuer": "SZW",
+        "rules": "MAX (82% income OR € 865)"
+    });
 
     var requestOptions = {
         method: 'POST',
@@ -85,6 +90,10 @@ class CheckRules extends Component {
         return (
             <div>
                 <p></p>
+                <p>Reference | Issuer | Date Start | Date End</p>
+                <p>BVV_v3 | SZW | {new Date(Date.now()).toLocaleString()} | ...</p>
+                <p>Rules:</p>
+                <p>MAX (82% income OR € 865)</p>
                 <p className="Check Rules"><button onClick={doEngineSession}>Check rules!</button></p>
                 <p className="Save Rules"><button onClick={CreateRulesEngine}>Save rules!</button></p>
             </div>
