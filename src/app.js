@@ -3,7 +3,8 @@ import { NavLink, Switch, Route } from 'react-router-dom';
 import 'fomantic-ui-css/semantic.min.css';
 import './app.css';
 
-import Bvv from "./bvv";
+import ReadRulesEngine from "./list_rules";
+import CheckRules from "./check_rules";
 
 const App = () => (
   <div className='app'>
@@ -16,7 +17,8 @@ const App = () => (
 const Navigation = () => (
   <nav>
     <ul className="header">
-      <li><NavLink exact to="/">Rules</NavLink></li>
+      <li><NavLink exact to="/">Home</NavLink></li>
+      <li><NavLink to="/checkrules">Check</NavLink></li>
     </ul>
   </nav>
 );
@@ -24,7 +26,8 @@ const Navigation = () => (
 const Main = () => (
   <Switch>
     <div className="content">
-      <Route exact path="/" component={Bvv} />
+      <Route exact path="/" component={ReadRulesEngine} />
+      <Route path="/checkrules" component={CheckRules} />
     </div>
   </Switch>
 );

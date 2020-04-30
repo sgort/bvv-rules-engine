@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import TextFileReader from './components/text-file-reader';
 import { Engine } from 'json-rules-engine';
-const BvvRules = require('./bvv-rules.txt');
 
 /**
  * Setup a new engine
@@ -61,14 +59,10 @@ function doEngineSession() {
         })
 }
 
-class Rules extends Component {
+class CheckRules extends Component {
     render() {
         return (
             <div>
-                <h1>Rules Engine config</h1>
-                <TextFileReader
-                    txt={BvvRules}
-                />
                 <p></p>
                 <p className="Check Rules"><button onClick={doEngineSession}>Check rules!</button></p>
             </div>
@@ -76,4 +70,4 @@ class Rules extends Component {
     }
 }
 
-export default Rules;
+export default CheckRules;
