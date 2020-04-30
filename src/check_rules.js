@@ -8,7 +8,7 @@ let engine = new Engine()
 
 // define a rule for detecting the player has exceeded foul limits.  Foul out any player who:
 // (has committed 5 fouls AND game is 40 minutes) OR (has committed 6 fouls AND game is 48 minutes)
-engine.addRule({
+let rulesengine = {
     conditions: {
         any: [{
             all: [{
@@ -38,7 +38,8 @@ engine.addRule({
             message: 'Player has fouled out!'
         }
     }
-})
+}
+engine.addRule(rulesengine);
 
 /**
  * Define facts the engine will use to evaluate the conditions above.
@@ -59,12 +60,33 @@ function doEngineSession() {
         })
 }
 
+function CreateRulesEngine() {
+    // POST the Rules set in the collection
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({"reference":"BVV_v9","issuer":"SZW","rules":"JSON formatted new set of rules"});
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("http://localhost:9000/rulesengine/insert", requestOptions)
+        .then(response => response.text())
+        .then(result => alert(result))
+        .catch(error => alert('error', error));
+}
+
 class CheckRules extends Component {
     render() {
         return (
             <div>
                 <p></p>
                 <p className="Check Rules"><button onClick={doEngineSession}>Check rules!</button></p>
+                <p className="Save Rules"><button onClick={CreateRulesEngine}>Save rules!</button></p>
             </div>
         )
     }
