@@ -48,11 +48,11 @@ class ReadRulesEngine extends Component {
     if (data && data.length > 0) {
       return (
         <div>
-          <h1>Rules Engine config BVV</h1>
-          <p>Reference | Issuer | Date Start | Date End | Rules</p>
+          <h1>Rules Engine config</h1>
+          <p>Domain | Reference | Issuer | Date Start | Date End | Rules</p>
           {data.map(item => (
             <div key={item.id}>
-              <p>{item.reference} | {item.issuer} | {item.date_start} | ... | {item.rules}</p>
+              <p>{item.domain} | {item.reference} | {item.issuer} | {item.date_start} | ... | {item.rules}</p>
             </div>
           ))}
         </div>

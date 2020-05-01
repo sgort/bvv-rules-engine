@@ -8,7 +8,7 @@ import CheckRules from "./check_rules";
 
 const App = () => (
   <div className='app'>
-    <h1>Demo Rules Engine beslagvrije voet using API's</h1>
+    <h1>Demo Rules Engine using API's</h1>
     <Navigation />
     <Main />
   </div>
@@ -18,6 +18,7 @@ const Navigation = () => (
   <nav>
     <ul className="header">
       <li><NavLink exact to="/">Home</NavLink></li>
+      <li><NavLink to="/editrules">Edit</NavLink></li>
       <li><NavLink to="/checkrules">Check</NavLink></li>
     </ul>
   </nav>
