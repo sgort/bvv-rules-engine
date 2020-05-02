@@ -5,7 +5,7 @@ import { RulesContext } from '../context/rules-context';
 import FlashMessage, { flashErrorMessage } from '../components/flash-message';
 
 
-function RulesListPage() {
+export default function RulesListPage() {
   const [state, dispatch] = useContext(RulesContext);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function RulesListPage() {
         const response = await axios.get('http://localhost:9000/rulesengine/');
         dispatch({
           type: 'FETCH_RULES',
-          payload: response.data.rules || response.data, // in case pagination is disabled
+          payload: response.data.data || response.data, // in case pagination is disabled
         });
       } catch (error) {
         flashErrorMessage(dispatch, error);
@@ -31,5 +31,3 @@ function RulesListPage() {
     </div>
   );
 };
-
-export default RulesListPage;

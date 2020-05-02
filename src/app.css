@@ -38,3 +38,6 @@ ul.header li a {
 .active {
   background-color: #637e1b;
 }
+.error {
+  color: #9f3a38;
+}
