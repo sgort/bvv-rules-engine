@@ -1,5 +1,5 @@
 body {
-  background-color: #f39881;
+  background-color: #cde48d;
   font-family: sans-serif;
   font-size: medium;
   padding: 20px;
@@ -36,5 +36,5 @@ ul.header li a {
   margin-bottom: 10px;
 }
 .active {
-  background-color: #ff2600;
+  background-color: #637e1b;
 }
