@@ -20,7 +20,7 @@ export default function RulesForm({ rulesmap }) {
       const response = await axios.post('http://localhost:9000/rulesengine/insert', data);
       dispatch({
         type: 'CREATE_RULESMAP',
-        payload: response.data,
+        payload: response.data.rules[0], // controller returns rules[] array via RulesEngin.insertMany(req.body) call
       });
       setRedirect(true);
     } catch (error) {
@@ -57,7 +57,9 @@ export default function RulesForm({ rulesmap }) {
   return (
     <Grid centered columns={1}>
       <Grid.Column width={8}>
-        <h1 style={{ marginTop: '1em' }}>Add New Rules</h1>
+      <h1 style={{ marginTop: "1em" }}>
+                    {rulesmap._id ? "Edit Rules" : "Add New Rules"}
+                </h1>
         <Form onSubmit={handleSubmit(onSubmit)} loading={state.loading}>
           <Form.Group>
             <Form.Field className={classnames({ error: errors.reference })} width={4}>

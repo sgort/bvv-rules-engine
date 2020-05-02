@@ -24,7 +24,8 @@ function reducer(state, action) {
         message: {
           type: 'success',
           title: 'Create Successful',
-          content: action.payload.message, // Message is defined in the API controller
+          //content: action.payload.message, // Message is defined in the API controller
+          content: 'New Rules created!', // Message definition in API controller not in (filtered) payload
         },
       };
     }
