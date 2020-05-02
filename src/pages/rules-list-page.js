@@ -26,6 +26,7 @@ export default function RulesListPage() {
   return (
     <div>
       <h1>List of Rules</h1>
+      <p></p>
       {state.message.content && <FlashMessage message={state.message} />}
       <RulesList rules={state.rules} />
     </div>

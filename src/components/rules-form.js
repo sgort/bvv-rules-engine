@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import { RulesContext } from '../context/rules-context';
 import { flashErrorMessage } from './flash-message';
+import { getAllByPlaceholderText } from '@testing-library/react';
 
 
 export default function RulesForm({ rulesmap }) {
@@ -57,9 +58,10 @@ export default function RulesForm({ rulesmap }) {
   return (
     <Grid centered columns={1}>
       <Grid.Column width={8}>
-      <h1 style={{ marginTop: "1em" }}>
-                    {rulesmap._id ? "Edit Rules" : "Add New Rules"}
-                </h1>
+        <h1 style={{ marginTop: "1em" }}>
+          {rulesmap._id ? "Edit Rules" : "Add New Rules"}
+        </h1>
+        <p></p>
         <Form onSubmit={handleSubmit(onSubmit)} loading={state.loading}>
           <Form.Group>
             <Form.Field className={classnames({ error: errors.reference })} width={4}>

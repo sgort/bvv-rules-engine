@@ -4,7 +4,7 @@ import 'fomantic-ui-css/semantic.min.css';
 import './app.css';
 
 import ReadRulesEngine from "./list_rules";
-import CheckRules from "./check_rules";
+import Home from "./home";
 import RulesAdmin from "./rules-admin";
 
 const App = () => (
@@ -19,8 +19,6 @@ const Navigation = () => (
   <nav>
     <ul className="header">
       <li><NavLink exact to="/">Home</NavLink></li>
-      <li><NavLink to="/editrules">Edit</NavLink></li>
-      <li><NavLink to="/checkrules">Check</NavLink></li>
       <li><NavLink to="/rulesadmin">Admin</NavLink></li>
     </ul>
   </nav>
@@ -29,8 +27,7 @@ const Navigation = () => (
 const Main = () => (
   <Switch>
     <div className="content">
-      <Route exact path="/" component={ReadRulesEngine} />
-      <Route path="/checkrules" component={CheckRules} />
+      <Route exact path="/" component={Home} />
       <Route path="/rulesadmin" component={RulesAdmin} />
     </div>
   </Switch>
