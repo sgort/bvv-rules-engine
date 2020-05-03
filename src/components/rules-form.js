@@ -106,10 +106,10 @@ export default function RulesForm({ rulesmap }) {
               </span>
             </Form.Field>
           </Form.Group>
-          <Form.Field className={classnames({ error: errors.rules })} width={16}>
+          <Form.Field className={classnames({ error: errors.rules })} higth={4} width={16}>
             <label htmlFor="rules">
               Rules
-              <input
+              <textarea
                 id="rules"
                 name="rules"
                 type="text"
