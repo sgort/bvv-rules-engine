@@ -3,7 +3,6 @@ import { NavLink, Switch, Route } from 'react-router-dom';
 import 'fomantic-ui-css/semantic.min.css';
 import './app.css';
 
-import ReadRulesEngine from "./list_rules";
 import Home from "./home";
 import RulesAdmin from "./rules-admin";
 
