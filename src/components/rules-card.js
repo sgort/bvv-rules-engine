@@ -54,8 +54,9 @@ export default function RulesCard({ rulesmap }) {
           </Button>
           <Button basic color="red" onClick={() => deleteRules(rulesmap._id)}>
             Delete
-      </Button>
-        </div>      </Card.Content>
+          </Button>
+        </div>
+      </Card.Content>
     </Card>
   );
 }
