@@ -8,7 +8,7 @@ class Home extends Component {
         <h2>Explain objective here...</h2>
         <p></p>
         <p>
-          <img src={require('./images/rulescloud.png')} alt=""/>
+          <img src={require('./images/APIstory.jpg')} alt=""/>
         </p>
       </div>
     )
