@@ -8,7 +8,7 @@ import RulesAdmin from "./rules-admin";
 
 const App = () => (
   <div className='app'>
-    <h1>Demo Rules Engine using API's</h1>
+    <h1>Demo API strategy - Rules Engine</h1>
     <Navigation />
     <Main />
   </div>

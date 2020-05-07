@@ -117,6 +117,18 @@ export default function RulesForm({ rulesmap }) {
               />
             </label>
           </Form.Field>
+          <Form.Field className={classnames({ error: errors.rules })} higth={4} width={16}>
+            <label htmlFor="rules">
+              Rule of law
+              <input
+                id="ruleoflaw"
+                name="ruleoflaw"
+                type="text"
+                placeholder="Public reference to rule of law"
+                ref={register({ required: false })}
+              />
+            </label>
+          </Form.Field>
           <Form.Group>
             <Form.Field className={classnames({ error: errors.date_start })} width={8}>
               <label htmlFor="date_start">
