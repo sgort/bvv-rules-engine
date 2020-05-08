@@ -38,7 +38,7 @@ export default function RulesCard({ rulesmap }) {
             <Icon name="stop circle outline" /> {rulesmap.date_end}
           </p>
           <p>
-            <Icon name="linkify" /> <a>{rulesmap.ruleoflaw}</a>
+            <Icon name="linkify" /><a href={rulesmap.ruleoflaw}>{rulesmap.ruleoflaw}</a>
           </p>
           <p>
             <Icon name="code" /> {rulesmap.rules}
